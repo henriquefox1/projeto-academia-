@@ -1,0 +1,499 @@
+/* ===========================
+   VARIÁVEIS E CONFIGURAÇÕES
+=========================== */
+:root {
+    --primary: #ff1d1d;
+    --primary-dark: #e50914;
+    --primary-hover: #b80000;
+    --bg-dark: #0b0b0b;
+    --bg-card: rgba(25, 25, 25, 0.9);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-muted: #d4d4d4;
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --transition: 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body { 
+    background: 
+      linear-gradient(to right, 
+        rgba(0,0,0,0.95) 15%, 
+        rgba(0,0,0,0.75) 45%, 
+        rgba(0,0,0,0.30) 75%, 
+        rgba(0,0,0,0.10) 100%), 
+      url("fundo.jpg") center/cover no-repeat;
+    min-height: 100vh;
+    color: var(--text-main);
+    overflow-x: hidden;
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: -1;
+  }
+  
+  /* ===========================
+     CABEÇALHO & NAVEGAÇÃO
+  =========================== */
+  .cabecalho {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  nav {
+    display: flex;
+    gap: 40px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  nav a:hover,
+  .cadastro a,
+  .opcoes a {
+    color: var(--primary);
+  }
+  
+  .btnTopo,
+  .entrar,
+  .card button {
+    background: var(--primary-dark);
+    color: var(--text-main);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .btnTopo {
+    padding: 13px 25px;
+    font-size: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  
+  .btnTopo:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+  }
+  
+  /* ===========================
+     CONTEÚDO E LOGIN
+  =========================== */
+  .conteudo {
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+    gap: 40px;
+    margin-top: 80px;
+  }
+  
+  .texto {
+    animation: aparecer 1.2s;
+  }
+  
+  .texto h1 {
+    font-size: 35px;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  .linha {
+    width: 90px;
+    height: 4px;
+    background: var(--primary);
+    margin-bottom: 25px;
+  }
+  
+  .texto p {
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    line-height: 32px;
+  }
+  
+  .login {
+    width: 430px;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 35px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+    animation: aparecer 1.5s;
+    transition: var(--transition);
+  }
+  
+  .login:hover {
+    transform: translateY(-5px);
+  }
+  
+  .login h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  
+  .login span,
+  .card h3,
+  .card i,
+  .card-contato i,
+  .campo i,
+  .item i {
+    color: var(--primary);
+  }
+  
+  .campo {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: var(--radius-md);
+    margin-bottom: 18px;
+    padding: 15px;
+    transition: var(--transition);
+  }
+  
+  .campo:hover,
+  .campo:focus-within {
+    border-color: var(--primary);
+  }
+  
+  .campo i {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+  
+  .campo input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .campo input::placeholder {
+    color: #bdbdbd;
+  }
+  
+  .opcoes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+  
+  .opcoes a,
+  .cadastro a {
+    text-decoration: none;
+  }
+  
+  .entrar {
+    width: 100%;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    font-size: 17px;
+  }
+  
+  .entrar:hover {
+    background: #c10000;
+    transform: scale(1.02);
+  }
+  
+  .divisor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 22px 0;
+    color: #aaa;
+  }
+  
+  .divisor::before,
+  .divisor::after {
+    content: "";
+    width: 40%;
+    height: 1px;
+    background: #555;
+  }
+  
+  .divisor span {
+    margin: 0 15px;
+  }
+  
+  .google {
+    width: 100%;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid #666;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .google:hover {
+    background: var(--text-main);
+    color: #000;
+  }
+  
+  .cadastro {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .cadastro a {
+    font-weight: 700;
+  }
+  
+  /* ===========================
+     SEÇÕES E CARDS
+  =========================== */
+  .secao, #planos, #contato {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 70px;
+  }
+  
+  .secao h1, #planos h1, #contato h1 {
+    text-align: center;
+    color: var(--text-main);
+    font-size: 48px;
+    margin-bottom: 60px;
+  }
+  
+  .cards, .cards-contato {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 35px;
+    flex-wrap: wrap;
+  }
+  
+  .card, .card-contato {
+    border: 1px solid #333;
+    border-radius: 25px;
+    text-align: center;
+    transition: 0.4s;
+  }
+  
+  .card {
+    width: 320px;
+    min-height: 480px;
+    padding: 40px 30px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    animation: aparecer 1.4s;
+  }
+  
+  .card-contato {
+    width: 260px;
+    min-height: 280px;
+    background: #1f1f1f;
+    border-radius: var(--radius-lg);
+    padding: 40px 25px;
+  }
+  
+  .card:hover, .card-contato:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+  }
+  
+  .card i, .card-contato i {
+    font-size: 55px;
+    margin-bottom: 25px;
+  }
+  
+  .card h2 { font-size: 34px; margin-bottom: 12px; }
+  .card h3 { font-size: 38px; margin-bottom: 25px; }
+  
+  .card p, .card-contato p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 28px;
+  }
+  
+  .card-contato h2 {
+    color: var(--text-main);
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .card button {
+    width: 100%;
+    margin-top: 35px;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .card button:hover {
+    background: #c40000;
+  }
+  
+  /* ===========================
+     TABELA
+  =========================== */
+  #horarios .tabela {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: #1b1b1b;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .tabela th {
+    background: var(--primary-dark);
+    color: var(--text-main);
+    padding: 18px;
+    font-size: 20px;
+  }
+  
+  .tabela td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  .tabela tr:nth-child(even) { background: #242424; }
+  .tabela tr:hover { background: #333; }
+  
+  /* ===========================
+     RODAPÉ
+  =========================== */
+  footer {
+    width: 100%;
+    padding: 30px;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: var(--transition);
+  }
+  
+  .item:hover {
+    transform: scale(1.05);
+  }
+  
+  .item i {
+    font-size: 42px;
+    transition: var(--transition);
+  }
+  
+  .item:hover i {
+    color: var(--text-main);
+  }
+  
+  .item h3 { margin-bottom: 5px; }
+  .item p { color: #aaa; font-size: 14px; }
+  
+  /* ===========================
+     ANIMAÇÕES
+  =========================== */
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ===========================
+     RESPONSIVIDADE
+  =========================== */
+  @media (max-width: 1100px) {
+    nav { display: none; }
+    .conteudo {
+      justify-content: center;
+      padding: 40px;
+      flex-direction: column;
+    }
+    .texto {
+      width: 100%;
+      max-width: 500px;
+    }
+    .texto h1 { font-size: 40px; }
+    footer {
+      flex-wrap: wrap;
+      height: auto;
+      gap: 25px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card, .tabela, .texto, .login {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .cabecalho {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .btnTopo { display: none; }
+    .secao, #planos, #contato { padding: 70px 20px; }
+    .secao h1, #planos h1, #contato h1 { font-size: 34px; }
+  }
